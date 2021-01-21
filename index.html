@@ -1,0 +1,54 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="constants.js"></script>
+    <script src="helpers.js"></script>
+    <script src="Vector.js"></script>
+    <script src="DrawableObjects/DrawableObject.js"></script>
+    <script src="DrawableObjects/DrawableCircle.js"></script>
+    <script src="DrawableObjects/DrawableRect.js"></script>
+    <script src="DrawableObjects/Obstacle.js"></script>
+    <script src="DrawableObjects/Edge.js"></script>
+    <script src="DrawableObjects/Collectibles.js"></script>
+    <script src="DrawableObjects/Coin.js"></script>
+    <script src="DrawableObjects/Player.js"></script>
+    <script src="Game.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        canvas {
+            background: #eee;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="levelSelector"></div>
+    <canvas width="800" height="700" id="canvas" ></canvas>
+    <div id="description">Hello World</div>
+    <script>
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+        const corners = [
+            new Edge(0, -6, canvas.width, 10),
+            new Edge(0, canvas.height - 4, canvas.width, 10),
+            new Edge(-6, 0, 10, canvas.height),
+            new Edge(canvas.width - 4, 0, 10, canvas.height),
+        ];
+        const game = new Game();
+    </script>
+    <script src="levels.js"></script>
+    <script src="script.js"></script>
+    <script>
+        selectLevel(-1);
+    </script>
+</body>
+
+</html>
